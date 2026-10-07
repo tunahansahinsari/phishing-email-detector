@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phishing Email Detector</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <header class="header">
+        <div class="logo">PHISHING<span>DETECTOR</span></div>
+
+        <p class="tagline">
+            Analyze emails for potential phishing threats
+        </p>
+    </header>
+
+
+    <main class="main-container">
+
+        <section class="hero">
+
+            <h1>
+                Is this email safe?
+            </h1>
+
+            <p>
+                Paste an email or upload an <strong>.eml</strong> file
+                to analyze its phishing risk.
+            </p>
+
+        </section>
+
+
+        <section class="email-card">
+
+            <div class="input-section">
+
+                <label for="subject">
+                    Email Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Enter the email subject..."
+                >
+
+            </div>
+
+
+            <div class="input-section">
+
+                <label for="body">
+                    Email Body
+                </label>
+
+                <textarea
+                    id="body"
+                    placeholder="Paste the email content here..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+
+            <div class="upload-section">
+
+                <label for="emlFile">
+                    Upload an .eml file
+                </label>
+
+                <input
+                    type="file"
+                    id="emlFile"
+                    accept=".eml"
+                >
+
+            </div>
+
+
+            <div class="button-group">
+
+                <button
+                    id="analyzeButton"
+                    class="primary-button"
+                >
+                    Analyze Email
+                </button>
+
+                <button
+                    id="analyzeEmlButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Analyze .EML
+                </button>
+
+            </div>
+
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+                Analyzing...
+            </div>
+
+
+            <div
+                id="result"
+                class="result hidden"
+            >
+
+                <div id="resultIcon" class="result-icon"></div>
+
+                <h2 id="prediction"></h2>
+
+                <div class="score-container">
+
+                    <div class="score-label">
+                        Phishing Risk Score
+                    </div>
+
+                    <div
+                        id="score"
+                        class="score"
+                    >
+                        0%
+                    </div>
+
+                </div>
+
+                <div
+                    id="responseMessage"
+                    class="response-message"
+                ></div>
+
+                <p class="disclaimer">
+                Risk score is a model estimate, not a guarantee.
+                </p>
+
+            </div>
+
+
+            <div
+                id="error"
+                class="error hidden"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        Machine learning based phishing detection
+    </footer>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
